@@ -15,9 +15,13 @@ if (!function_exists('get_remote_config')) {
         $configs = app(RemoteConfig::class)->get($configPath);
 
         try {
-            $propertySources = $configs['propertySources'][0]['source'];
-            $configKey       = 'spring.data.' . $configKey;
-            return $propertySources[$configKey];
+            foreach ($configs['propertySources'] as $config) {
+                $configKey = 'acme.' . $configKey;
+                if (isset($config['source'][$configKey])) {
+                    return $config['source'][$configKey];
+                }
+            }
+            return null;
         } catch (\Exception $e) {
             return null;
         }
