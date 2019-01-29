@@ -22,7 +22,7 @@ if (!function_exists('get_remote_config')) {
                     return $config['source'][$configKey];
                 }
             }
-            return $default;
         }
+        return $default;
     }
 }
