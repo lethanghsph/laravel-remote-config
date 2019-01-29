@@ -1,0 +1,29 @@
+{
+    "name": "lethang/laravel-remote-config",
+    "description": "Spring Cloud Config client for Laravel",
+    "license": "MIT",
+    "version": "dev-master",
+    "authors": [
+        {
+            "name": "thangle",
+            "email": "lethanghsph@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Lethanghsph\\LaravelRemoteConfig\\": "src"
+        }
+    },
+    "autoload-dev": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lethanghsph\\LaravelRemoteConfig\\LaravelRemoteConfigServiceProvider"
+            ]
+        }
+    }
+}
