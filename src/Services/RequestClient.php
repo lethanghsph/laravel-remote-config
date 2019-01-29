@@ -38,7 +38,7 @@ class RequestClient
         $client = $this->getClient();
         $requestPromises = [];
         foreach ($services as $service) {
-            $uri = "/{$service}.json";
+            $uri = "/{$service}";
             if ($this->config['env']) {
                 $uri = "/{$this->config['env']}{$uri}";
             }
