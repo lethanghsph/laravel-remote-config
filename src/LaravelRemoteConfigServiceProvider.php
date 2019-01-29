@@ -13,7 +13,7 @@ class LaravelRemoteConfigServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([__DIR__ . '/Config/laravel-remote-config.php' => config_path('laravel-remote-config.php'),]);
     }
 
     /**
@@ -23,6 +23,10 @@ class LaravelRemoteConfigServiceProvider extends ServiceProvider
      */
     public function register()
     {
-       //
+        if (file_exists(__DIR__ . '/Helpers/Helper.php')) {
+            require_once(__DIR__ . '/Helpers/Helper.php');
+        }
+
+        $this->mergeConfigFrom(__DIR__ . '/Config/laravel-remote-config.php', 'laravel-remote-config');
     }
 }
