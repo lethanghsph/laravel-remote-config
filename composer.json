@@ -1,5 +1,5 @@
 {
-    "name": "lethang/laravel-remote-config",
+    "name": "lethanghsph/laravel-remote-config",
     "description": "Spring Cloud Config client for Laravel",
     "license": "MIT",
     "version": "dev-master",
