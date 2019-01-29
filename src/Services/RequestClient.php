@@ -52,13 +52,6 @@ class RequestClient
         foreach ($results as $key => $result) {
             if (isset($result['value']) && $result['state'] == 'fulfilled') {
                 $arrayResult[$key] = $this->filterConfig(json_decode($result['value']->getBody()->getContents(), true));
-            } elseif ($result['state'] == 'rejected') {
-                /*$arrayResult[$key] = [
-                    'error' => 'true',
-                    'messaje' => $result['reason']->getMessage()
-                ];*/
-            } else {
-                //$arrayResult[$key] = [];
             }
         }
         return $arrayResult;
