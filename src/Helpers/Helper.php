@@ -9,11 +9,15 @@ if (!function_exists('get_remote_config')) {
      * @param string $configKey
      * @param string $configPath
      * @param null   $default
+     * @param string $enviroment
      * @return mixed
      */
-    function get_remote_config(string $configKey, string $configPath, $default = null)
+    function get_remote_config(string $configKey, string $configPath, $default = null, string $enviroment = '')
     {
-        $configs = app(RemoteConfig::class)->get($configPath);
+        if (empty($enviroment)) {
+            $enviroment = env('APP_ENV', 'local');
+        }
+        $configs = app(RemoteConfig::class)->get($configPath . '/' . $enviroment);
 
         if (isset($configs['propertySources']) && is_array($configs['propertySources'])) {
             $configKey = 'acme.' . $configKey;
