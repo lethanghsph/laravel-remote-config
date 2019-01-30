@@ -20,12 +20,12 @@ class RequestClient
     public function __construct(array $config = null)
     {
         $this->config = [
-            "host"     => env("EXTERNAL_SERVICE_HOST"),
-            "user"     => env("EXTERNAL_SERVICE_USER"),
-            "password" => env("EXTERNAL_SERVICE_PASSWORD"),
-            "timeout"  => env("EXTERNAL_SERVICE_TIMEOUT", 5),
-            "env"      => env("EXTERNAL_SERVICE_ENV"),
-            "prefix"   => env("EXTERNAL_SERVICE_URI_PREFIX"),
+            "host"     => env("EXTERNAL_CONFIG_SERVICE_HOST"),
+            "user"     => env("EXTERNAL_CONFIG_SERVICE_USER"),
+            "password" => env("EXTERNAL_CONFIG_SERVICE_PASSWORD"),
+            "timeout"  => env("EXTERNAL_CONFIG_SERVICE_TIMEOUT", 5),
+            "env"      => env("EXTERNAL_CONFIG_SERVICE_ENV"),
+            "prefix"   => env("EXTERNAL_CONFIG_SERVICE_URI_PREFIX"),
         ];
 
         if (!is_null($config)) {
