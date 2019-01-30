@@ -8,7 +8,7 @@ if (!function_exists('get_remote_config')) {
      *
      * @param string $configKey
      * @param string $configPath
-     * @param null   $default
+     * @param mixed  $default
      * @param string $enviroment
      * @return mixed
      */
